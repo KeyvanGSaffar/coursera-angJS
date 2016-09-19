@@ -13,11 +13,11 @@ function CheckController ($scope) {
 
   $scope.ChkIfTooMuch = function () {
     var textSplit = $scope.text.split(",");
-    console.log(textSplit.length);
     var count = textSplit.length;
 
     for (var i=0 ; i < textSplit.length; i++) {
-      if (textSplit[i].match(/^ *(?!.)/)){
+      if (textSplit[i].match(/^ *(?!.)/)){  // I do NOT consider and empty item,
+                                            //  i.e., `, ,` as an item towards to the count.
         count = count - 1;
       };
     };
